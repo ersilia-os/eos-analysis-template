@@ -5,58 +5,79 @@ This repository provides a structured template for setting up new research analy
 Replace this description with a N-word description of the project, following the FAIR (link) principles holded by Ersilia.  
 
 
-# Contents
-
-assets --
-
-data --
-
-notebooks --
-
-other --
-
-output --
-
- - results
- - plots
-
-
-scripts --
-
-
-
-Tracked by Git and linked to a Github repository
+Tracked by Git and linked to a Github repository: only src, scripts and notebooks
 
 Tracked by DVC and linked to a Google Drive folder inside "Projects/<<Project name>>" named "Repository"
 
 
 
-## 📂 Repository Structure
+## Repository Structure
 
-- **`data/`**  
-  Place your raw and processed datasets here.  
-  *(Currently contains `.gitkeep` to preserve the folder in version control)*
+eos-analysis-template/
+│
+├── LICENSE
+├── README.md
+├── .gitignore
+├── install.sh
+├── requirements.txt
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── scripts/
+├── notebooks/
+├── assets/
+├── output/
+│   ├── results/
+│   └── plots/
+│
+├── src/
+├── tools/
+├── docs/
+├── tmp/
+│
+└── .git/
 
-- **`scripts/`**  
-  Store reusable analysis or preprocessing scripts.  
 
-- **`notebooks/`**  
-  Jupyter notebooks for exploratory data analysis (EDA), prototyping, or reporting.  
+# Repository Structure
 
-- **`assets/`**  
-  Supporting materials such as figures, images, or external references.  
+This repository is organized as follows:
 
-- **`output/`**  
-  Results generated during analysis:  
-  - `results/` → numerical/text results, logs, etc.  
-  - `plots/` → generated plots and visualizations.  
+- **data/**
+  - **raw/** → Original, untouched datasets  
+  - **processed/** → Cleaned and transformed datasets  
 
-- **`other/`**  
-  Miscellaneous files that do not fit into other categories.  
+- **scripts/** → Standalone scripts for preprocessing or automation  
+
+- **notebooks/** → Jupyter notebooks for exploration and prototyping  
+
+- **assets/** → Images, figures, and other static resources  
+
+- **output/**
+  - **results/** → Numerical results, logs, or text outputs  
+  - **plots/** → Visualizations and charts  
+
+- **src/** → Core source code and reusable modules  
+
+- **tools/** → Helper utilities and development tools  
+
+- **docs/** → Project documentation and reports  
+
+- **tmp/** → Temporary files or intermediate outputs  
+
+- **.git/** → Git metadata (version control)  
 
 ---
 
-## Project motivation
+📌 Empty folders are preserved with `.gitkeep` files so the structure remains consistent in Git.
+
+
+---
+
+## Project motivation and goal
+
+Write a brief description about the scientific motivation and goal of the project. 
 
 ## 🚀 Getting Started
 
