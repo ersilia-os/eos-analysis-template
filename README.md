@@ -5,12 +5,19 @@ Template respository for an Ersilia research analysis
 # Contents
 
 assets --
+
 data --
+
 notebooks --
+
 other --
+
 output --
+
  - results
  - plots
+
+
 scripts --
 
 
