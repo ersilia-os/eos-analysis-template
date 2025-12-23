@@ -85,7 +85,11 @@ Write a brief description about the scientific motivation and goal of the projec
    ```bash
    git clone <your-repo-url>
    cd eos-analysis-template
+  ```
 
+## Using this repository
+
+This repository may contain data and outputs that are not stored in GitHub. You can use [evc](https://github.com/ersilia-os/evc) to download these files or, otherwise, simply download them and place them in the current folder following [this link](https://example.com).
 
 ## About the Ersilia Open Source Initiative
 

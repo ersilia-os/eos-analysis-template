@@ -1,3 +1,13 @@
+# Managed by Ersilia Version Control (evc)
+data/processed/
+data/raw/
+output/plots/
+output/results/
+
+# Manually added
+.DS_Store
+.vscode/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
