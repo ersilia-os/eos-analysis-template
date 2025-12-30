@@ -1,10 +1,9 @@
 # Managed by Ersilia Version Control (evc)
-data/processed/
-data/raw/
-output/plots/
-output/results/
+data/
+output/
 
 # Manually added
+tmp/
 .DS_Store
 .vscode/
 
