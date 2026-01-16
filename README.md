@@ -1,4 +1,4 @@
-# eos-analysis-template
+# Ersilia's analysis template
 
 This repository provides a structured template for setting up new research analysis in Ersilia.
 
@@ -8,10 +8,10 @@ Replace this paragraph with a short description of the project. This description
 
 ## Tracking details
 
-The project is tracked by Git (mainly for code) and DVC (mainly for data):
+The project is is tracked in [GitHub](https://github.com/ersilia-os/) (mainly for code) and [EOSVC](https://github.com/ersilia-os/eosvc) (mainly for data):
 
 * Tracked by Git and linked to a Github repository: only src, scripts and notebooks.
-* Tracked by DVC and linked to a Google Drive folder inside "Projects/<<Repository name>>".
+* Tracked by DVC and linked to a public or private S3 bucket.
 
 ## Repository structure
 
@@ -81,15 +81,16 @@ Write a brief description about the scientific motivation and goal of the projec
 
 ## 🚀 Getting Started
 
-1. **Clone this repository**  
-   ```bash
-   git clone <your-repo-url>
-   cd eos-analysis-template
-  ```
+**Clone this repository**  
+
+```bash
+git clone <your-repo-url>
+cd eos-analysis-template
+```
 
 ## Using this repository
 
-This repository may contain data and outputs that are not stored in GitHub. You can use [evc](https://github.com/ersilia-os/evc) to download these files or, otherwise, simply download them and place them in the current folder following [this link](https://example.com).
+This repository may contain data and outputs that are not stored in GitHub. You can use [eosvc](https://github.com/ersilia-os/eosvc) to download these files or, otherwise, simply download them and place them in the current folder following [this link](https://example.com).
 
 ## About the Ersilia Open Source Initiative
 
