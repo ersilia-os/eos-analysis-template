@@ -38,6 +38,28 @@ This is an Ersilia Open Source Initiative research analysis repository. It follo
 - Do not commit data, outputs, or temporary files — these belong in eosvc.
 - Do not commit secrets, credentials, or API keys.
 
+## Python naming conventions
+
+- Variables inside a script use `snake_case` and are never capitalised.
+- Project-wide constants (values reused across scripts) must be defined in `src/default.py` and named in `ALL_CAPS`.
+- Scripts that import from `src/` must include this path setup at the top, before any `src` imports:
+
+```python
+import os
+import sys
+root = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(root, "..", "src"))
+```
+
+- Declare input and output folder paths as variables at the top of the script (module level, not inside functions) and ensure they exist with `os.makedirs(..., exist_ok=True)`. Do not create folders inside functions unless strictly necessary for that function's logic.
+
+```python
+data_dir = os.path.join(root, "..", "data", "processed")
+output_dir = os.path.join(root, "..", "output")
+os.makedirs(data_dir, exist_ok=True)
+os.makedirs(output_dir, exist_ok=True)
+```
+
 ## README guidelines
 
 ### Root README
