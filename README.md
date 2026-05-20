@@ -1,59 +1,39 @@
 # Ersilia's analysis template
 
+[![status](https://img.shields.io/badge/status-pending-red)](https://github.com/)
+
 This repository provides a structured template for setting up new research analysis in Ersilia.
 
 ## Background
 
-<Replace this paragraph with a short description of the project. This description should explain the background or context of the project, specifying collaborators.>
+Replace this paragraph with a short description of the project. This description should explain the background or context of the project, specifying collaborators.
 
-## 🚀 Getting Started
+## Project tracking
 
-<Replace this bit with any relevant information about how to use this repository>
+* [Meeting #1](https://example.com) - YYYY-MM-DD: Short description
+* ...
 
-```bash
-git clone <your-repo-url>
-cd <your-repo-url>
-```
+## Progress
 
-### Tracking details
+### Step 1
 
-The project is is tracked in [GitHub](https://github.com/ersilia-os/) (code) and [EOSVC](https://github.com/ersilia-os/eosvc) (data):
+Describe what was done in step 1.
 
-* Tracked by Git and linked to a Github repository: only src, scripts and notebooks.
-* Tracked by eosvc and linked to a public or private S3 bucket. Only the data/ and output/ folder are eosvc tracked.
+### Step 2
+
+Describe what was done in step 2.
 
 ## Repository structure
 
 This repository is organized as follows:
 
-```
-eos-analysis-template/
-│
-├── LICENSE
-├── README.md
-├── .gitignore
-├── requirements.txt
-├── data/
-│   ├── raw/
-│   └── processed/
-├── scripts/
-├── notebooks/
-├── assets/
-├── output/
-├── src/
-├── tools/
-├── docs/
-├── tmp/
-└── .git/
-```
-
 - **data/**
   - **raw/** → Original, untouched datasets  
   - **processed/** → Cleaned and transformed datasets  
 
-- **scripts/** → Standalone scripts for preprocessing or automation. Numbered in sequential order for running 
+- **scripts/** → Standalone scripts for preprocessing or automation. Numbered in sequential order for running.
 
-- **notebooks/** → Jupyter notebooks for exploration and prototyping  
+- **notebooks/** → Jupyter notebooks for exploration and prototyping.
 
 - **assets/** → Images, figures, and other static resources  
 
@@ -63,19 +43,14 @@ eos-analysis-template/
 
 - **tools/** → Helper utilities and development tools  
 
-- **docs/** → Project documentation and reports, including AI-generated docs and files
+- **docs/** → Project documentation and reports.
 
 - **tmp/** → Temporary files or intermediate outputs  
 
-- **.git/** → Git metadata (version control)  
+The project is tracked in [GitHub](https://github.com/ersilia-os/) (code) and [EOSVC](https://github.com/ersilia-os/eosvc) (data):
 
-- **requirements.txt** → version-specified list of packages required to run the analysis
-
----
-
-📌 Empty folders are preserved with `.gitkeep` files so the structure remains consistent in Git.
-
----
+* Tracked by Git and linked to a GitHub repository: `scripts/`, `notebooks/`, `src/`, `tools/`, `docs/` and `assets/`.
+* Tracked by `eosvc` and linked to a public or private S3 bucket: only `data/` and `output/`. The `access.json` file records whether they are public or private.
 
 ## About the Ersilia Open Source Initiative
 
