@@ -4,7 +4,7 @@ This is an Ersilia Open Source Initiative research analysis repository.
 
 ## Repository structure
 
-This is the by-default structure of the repository. Not all folders are mandatory. Before wrapping up the repository, ask before removing any unused folders.
+This is the by-default structure of the repository. Not all folders are mandatory. The template ships `data/`, `scripts/`, `notebooks/`, `assets/`, `docs/` and `tmp/`; create `output/`, `src/` (with `src/default.py`) and `tools/` when first needed. Before wrapping up the repository, ask before removing any unused folders.
 
 ```
 ├── data/
