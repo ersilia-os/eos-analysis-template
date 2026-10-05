@@ -1,7 +1,5 @@
 # Research Analysis Project from Ersilia
 
-This is an Ersilia Open Source Initiative research analysis repository.
-
 ## Repository structure
 
 This is the by-default structure of the repository. Not all folders are mandatory. Before wrapping up the repository, ask before removing any unused folders.
@@ -23,21 +21,19 @@ This is the by-default structure of the repository. Not all folders are mandator
 
 ## Hard requirements
 
-- All Python plotting should strictly use the [stylia](https://github.com/ersilia-os/stylia) library. Invoke the `/stylia-plotting` skill for guidance on how to use it. If the skill is not installed, ask the user to install it, or guide them through installation. Ersilia skills are available at [https://github.com/ersilia-os/ersilia-skills].
-
+- All Python plotting should strictly use the [stylia](https://github.com/ersilia-os/stylia) library. Invoke the `/stylia-plotting` skill for guidance on how to use it. If the skill is not installed, ask the user to install it, or guide them through installation. Ersilia skills are available at https://github.com/ersilia-os/ersilia-skills.
 - Scripts in `scripts/` must be numbered sequentially (`01_preprocess.py`, `02_train.py`, ...) and outputs in `output/` should follow the same numbering.
-
 - Do **not** create new folders at the root level outside the ones listed above.
 
 ## Working with the user
 
-- **Ask, don't assume.** For **any** non-trivial decision — which approach to take, which dataset to use, what to name something, whether to add a dependency, how to handle an ambiguous case — use the `AskUserQuestion` tool BEFORE editing. Two short questions up front beat a wrong-direction edit. Silent guesses are not acceptable.
+- **Ask, don't assume.** For any non-trivial decision (approach, dataset, naming, a new dependency, an ambiguous case), use `AskUserQuestion` before editing. No silent guesses.
 - **Plans are mandatory.** Anything beyond a one-line fix or a pure read-only investigation MUST go through plan mode. If invoked outside plan mode for non-trivial work, propose the plan in chat and stop until the user confirms. Never skip the plan step to "save time" — the user actively wants the plan first.
 - **Surface uncertainty.** When you have multiple reasonable options or are unsure about intent, name them and ask. Don't pick silently.
 
 ## Scientific tools and resources
 
-- **Ersilia Model Hub.** For any task involving prediction of small-molecule properties (bioactivity, ADMET, toxicity, target affinity, generative chemistry, embeddings, etc.), check the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia) before writing custom code or calling external services. Browse with `ersilia catalog`; fetch a model with `ersilia fetch <eos_id>`; serve and run with `ersilia serve <eos_id>` then `ersilia api -i input.csv -o output.csv`. Record the model ID (e.g. `eos1234`) in the script header and in `scripts/README.md`.
+- **Ersilia Model Hub.** For small-molecule property prediction (bioactivity, ADMET, toxicity, embeddings, generation), check the [Ersilia Model Hub](https://github.com/ersilia-os/ersilia) first: `ersilia catalog`, `ersilia fetch <eos_id>`, `ersilia serve <eos_id>`, `ersilia api -i input.csv -o output.csv`. Record the model ID (e.g. `eos1234`) in the script header and in `scripts/README.md`.
 - Do not reimplement a predictor when an Ersilia model already covers it. If no suitable model exists, surface the gap to the user with alternatives and let them decide.
 - Other Ersilia repositories ([github.com/ersilia-os](https://github.com/ersilia-os)) may contain utilities relevant to a task (data download, standardisation, embeddings). Check before writing similar tooling from scratch.
 
@@ -53,6 +49,7 @@ This is the by-default structure of the repository. Not all folders are mandator
 ## Conventions
 
 - Python is the primary language. Pin versions in `requirements.txt`.
+- Lint and format with `ruff` only: `ruff check` and `ruff format` on `scripts/` and `src/`.
 - Keep notebooks in `notebooks/` for exploration; move stable, reusable logic to `src/`.
 - Do not commit data, outputs, or temporary files — these belong in eosvc.
 - Do not commit secrets, credentials, or API keys.
@@ -78,13 +75,6 @@ sys.path.append(os.path.join(root, "..", "src"))
 
 - Declare input and output folder paths as variables at the top of the script (module level, not inside functions) and ensure they exist with `os.makedirs(..., exist_ok=True)`. Do not create folders inside functions unless strictly necessary for that function's logic.
 
-```python
-data_dir = os.path.join(root, "..", "data", "processed")
-output_dir = os.path.join(root, "..", "output")
-os.makedirs(data_dir, exist_ok=True)
-os.makedirs(output_dir, exist_ok=True)
-```
-
 ## README guidelines
 
 ### Root README
@@ -96,13 +86,6 @@ Be ruthless about brevity. Avoid: copying the folder tree (link to the structure
 ### scripts/README.md
 
 Optionally, scripts folder can have a `README.md`. For each script, write a brief description of what it does (one to three sentences). Do not list inputs and outputs — those belong in the script's docstring. If the script encodes a key decision (a threshold, a cutoff, a minimum number of molecules, a model choice, etc.), state that value and its rationale explicitly in the README so it can be reviewed and revised without reading the code.
-
-Example entry:
-```
-## 02_filter_actives.py
-Filters the screened compound library to retain only active hits based on a predicted activity score.
-**Cutoff:** compounds with a score below 0.5 are excluded. This threshold was chosen to balance recall and specificity given the dataset size.
-```
 
 ### docs/
 
@@ -127,4 +110,4 @@ These actions must never be taken autonomously — always explain the situation 
 
 ## Other available skills
 
-Ersilia maintains a set of skills in the [ersilia-skills](https://github.com/ersilia-os/ersilia-skills) repository. These are dynamically updated — check that repository for the current list of available skills and instructions on how to install them. If you find an interesting and useful skill, consider using it.
+Ersilia maintains a set of skills in the [ersilia-skills](https://github.com/ersilia-os/ersilia-skills) repository. These are dynamically updated — check that repository for the current list of available skills and instructions on how to install them. If you find an interesting and useful skill, consider using it. When using a skill teaches you something it should know (an error, a missing case, a user correction), suggest a concrete improvement and offer to open a PR on ersilia-skills.
