@@ -23,7 +23,7 @@ This is the by-default structure of the repository. Not all folders are mandator
 
 ## Hard requirements
 
-- All Python plotting should strictly use the [stylia](https://github.com/ersilia-os/stylia) library. Invoke the `/stylia-plotting` skill for guidance on how to use it. If the skill is not installed, ask the user to install it, or guide them through installation. Ersilia skills are available at [https://github.com/ersilia-os/ersilia-skills].
+- All Python plotting should strictly use the [stylia](https://github.com/ersilia-os/stylia) library. Invoke the `/stylia-plotting` skill for guidance on how to use it. If the skill is not installed, ask the user to install it, or guide them through installation. Ersilia skills are available at https://github.com/ersilia-os/ersilia-skills.
 
 - Scripts in `scripts/` must be numbered sequentially (`01_preprocess.py`, `02_train.py`, ...) and outputs in `output/` should follow the same numbering.
 
@@ -53,6 +53,7 @@ This is the by-default structure of the repository. Not all folders are mandator
 ## Conventions
 
 - Python is the primary language. Pin versions in `requirements.txt`.
+- Lint and format with `ruff` only: `ruff check` and `ruff format` on `scripts/` and `src/`.
 - Keep notebooks in `notebooks/` for exploration; move stable, reusable logic to `src/`.
 - Do not commit data, outputs, or temporary files — these belong in eosvc.
 - Do not commit secrets, credentials, or API keys.
