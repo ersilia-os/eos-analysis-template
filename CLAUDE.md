@@ -42,6 +42,7 @@ This is the by-default structure of the repository. Not all folders are mandator
 - **Git** tracks code only: `scripts/`, `notebooks/`, `src/`, `tools/`, `docs/`, `assets/`
 - **eosvc** (Ersilia Version Control) tracks data: `data/` and `output/` are linked to an S3 bucket and excluded from git
 - `access.json` records whether data/output are public or private
+- **No Git LFS.** Ersilia does not use Git LFS in any repository. Files too large for Git (100 MiB or more) go in `data/` or `output/` (eosvc), not in `assets/` or other Git-tracked folders; do not add `filter=lfs` rules to `.gitattributes`.
 - Empty folders are preserved with `.gitkeep` files.
   - As soon as a folder contains data or files, remove the `.gitkeep` since it is no longer needed.
 - There is a badge at the top of the README file with three states: `pending` (red) is the default for an untouched template; set it to `in progress` (orange) when work is underway, and to `ready` (green) when work is finished.

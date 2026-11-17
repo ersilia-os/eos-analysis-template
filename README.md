@@ -51,6 +51,7 @@ The project is tracked in [GitHub](https://github.com/ersilia-os/) (code) and [E
 
 * Tracked by Git and linked to a GitHub repository: `scripts/`, `notebooks/`, `src/`, `tools/`, `docs/` and `assets/`.
 * Tracked by `eosvc` and linked to a public or private S3 bucket: only `data/` and `output/`. The `access.json` file records whether they are public or private.
+* Git LFS is not used. Files too large for Git (GitHub rejects files of 100 MiB or more) go in `data/` or `output/`, tracked by `eosvc`; keep files in `assets/` small.
 
 ## About the Ersilia Open Source Initiative
 
